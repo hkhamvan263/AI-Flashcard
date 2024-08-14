@@ -1,10 +1,6 @@
-'use client'
 import Image from "next/image"
-import getStripe from "@/utils/getStripe"
-import { useState } from 'react'
 import { AppBar, Box, Button, Container, Grid, Toolbar, Typography } from "@mui/material"
 import Head from "next/head"
-import { Londrina_Solid } from "next/font/google"
 
 export default function Home() {
   return (
