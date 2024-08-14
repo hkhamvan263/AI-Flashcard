@@ -1,5 +1,5 @@
 import Image from "next/image";
-import getStripe from "@/utils/get-stripe";
+import getStripe from "@/utils/getStripe";
 import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import { AppBar, Button, Container, Toolbar, Typography} from "@mui/material";
 import next from "next";
