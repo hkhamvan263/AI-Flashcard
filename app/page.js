@@ -1,23 +1,12 @@
 'use client'
-//import Image from "next/image"
+import Image from "next/image"
 import getStripe from "@/utils/getStripe"
 import { useState } from 'react'
-//import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs"
 import { AppBar, Box, Button, Container, Grid, Toolbar, Typography } from "@mui/material"
 import Head from "next/head"
 import { Londrina_Solid } from "next/font/google"
 
 export default function Home() {
-  const [text, setText] = useState('')
-  const [flashcards, setFlashcards] = useState([])
-  // Put the following code inside the return statement
-  //<SignedOut>
-  //  <Button color="inherit">Login</Button>
-  //  <Button color="inherit">Sign Up</Button>
-  //</SignedOut>
-  //<SignedIn>
-  //  <UserButton />
-  //</SignedIn>
   return (
     <Container maxWidth="100vw">
       <Head>
