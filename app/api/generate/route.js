@@ -1,6 +1,5 @@
 import { NextResponse} from "next/server";
 import OpenAI from "openai";
-import { Models } from "openai/resources";
 
 
 const systemPrompt = `You are a flashard generating machine
