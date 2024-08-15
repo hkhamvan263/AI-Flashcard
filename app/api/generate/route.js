@@ -1,7 +1,7 @@
 import { NextResponse} from "next/server";
 import OpenAI from "openai";
 
-
+require('dotenv').config({ path: '.env.local' })
 const systemPrompt = `You are a flashard generating machine
 that generates flashcars for users based on their prompts.
 
