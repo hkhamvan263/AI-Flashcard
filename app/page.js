@@ -2,8 +2,7 @@
 import Image from "next/image";
 // import getStripe from "@/utils/get-stripe";
 import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
-import { AppBar, Box, Button, Container, Grid, Toolbar, Typography} from "@mui/material";
-import next from "next";
+import {AppBar, Box, Button, Container, Grid, Toolbar, Typography} from "@mui/material";
 import Head from "next/head"
 
 export default function Home() {
@@ -20,16 +19,15 @@ export default function Home() {
             variant="h6"
             style={{flexGrow: 1}}
           >   
-            Flashcards AI</Typography>
+            Flashcards AI
+          </Typography>
           <SignedOut>
-            <Button color="inherit">Login</Button>
-            <Button color="inherit">Sign Up</Button>
+            <Button color="inherit" href="/sign-in">Login</Button>
+            <Button color="inherit" href="/sign-up">Sign Up</Button>
           </SignedOut>
-
           <SignedIn>
             <UserButton />
           </SignedIn>
-
         </Toolbar>
       </AppBar>
       <Box
