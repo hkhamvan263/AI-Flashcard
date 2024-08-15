@@ -32,7 +32,8 @@ export default function Home() {
           </SignedIn>
 
         </Toolbar>
-      </AppBar> 
+      </AppBar>
+      
     </Container>
   )
 }
