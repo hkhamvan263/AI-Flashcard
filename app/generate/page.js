@@ -14,6 +14,7 @@ import {
     DialogActions,
     DialogContent,
     DialogContentText,
+    DialogTitle,
     Grid, 
     Paper, 
     TextField, 
