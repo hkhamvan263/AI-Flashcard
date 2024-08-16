@@ -1,6 +1,6 @@
 'use client'
 import {useUser} from '@clerk/nextjs'
-import {collection, writeBatch} from 'firebase/firestore'
+import {collection, writeBatch, setDoc, getDoc, doc} from 'firebase/firestore'
 import {useRouter} from 'next/navigation'
 import {useState} from 'react'
 import {

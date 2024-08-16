@@ -17,7 +17,7 @@ import {
 } from '@mui/material'
 import {useSearchParams} from 'next/navigation'
 
-export default function Flashcard(){
+export default function Flashcard() {
   const {isLoaded , isSignedIn, user} = useUser()
   const [flashcards, setFlashcards] = useState([])
   const [flipped, setFlipped] = useState([])
