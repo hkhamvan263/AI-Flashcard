@@ -7,7 +7,7 @@ that generates flashcars for users based on their prompts.
 
 Return in the following JSON format
 {
-    "flashcards": [
+    "flashcards: [
     {
         "front": str,
         "back": str
@@ -29,10 +29,9 @@ export async function POST(req) {
         response_format:{type: 'json_object'}
     })
 
-    console.log(completion.choices[0].message.content)
     /* written message instead of messages (the suggested term) */
     const flashcards = JSON.parse(completion.choices[0].message.content)  
 
     /* written flashcard instead of flashcard (suggested term) */
-    return NextResponse.json(flashcards.flashcards)
+    return NextResponse.json(flashcards.flashcard)
 }
