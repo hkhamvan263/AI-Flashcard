@@ -130,7 +130,7 @@ export default function Generate() {
                 </Paper>
             </Box>
             {flashcards.length > 0 && (
-                <Box sx={{mt: 4, display: 'flex', justifyContent: 'center'}}>
+                <Box sx={{mt: 4}}>
                     <Typography variant="h5">Flashcards Preview</Typography>
                     <Grid container spacing={3}>
                         {flashcards.map((flashcard, index) => (
@@ -185,7 +185,7 @@ export default function Generate() {
                         ))}
                     </Grid>
                     <Box sx = {{mt:4, display:'flex', justifyContent:'center'}}>
-                        <Button variant ="contained" color="secondary" onClick={handleOpen}>
+                        <Button variant="contained" color="secondary" onClick={handleOpenDialog}>
                             Save
                         </Button>
                     </Box>
