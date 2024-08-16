@@ -28,7 +28,6 @@ export default function Generate() {
     const [text, setText] = useState('')
     const [name, setName] = useState('')
     const [dialogOpen, setDialogOpen] = useState(false)
-    const [open, setOpen] = useState(false)
     const router = useRouter()
     
     const handleSubmit = async () => {
@@ -52,16 +51,13 @@ export default function Generate() {
         }))
     }
 
-    const handleOpen = () => {
-        setOpen(true)
+    const handleOpenDialog = () => {
+        setDialogOpen(true)
     }
 
-    const handleClose = () => {
-        setOpen(false)
+    const handleCloseDialog = () => {
+        setDialogOpen(false)
     }
-
-    const handleOpenDialog = () => setDialogOpen(true)
-    const handleCloseDialog = () => setDialogOpen(false)
 
     const saveFlashcards = async () => {
         if (!name) {
@@ -92,7 +88,7 @@ export default function Generate() {
         })
 
         await batch.commit()
-        handleClose()
+        handleCloseDialog()
         router.push('/flashcards')
     }
     return (
@@ -184,7 +180,7 @@ export default function Generate() {
                             </Grid>
                         ))}
                     </Grid>
-                    <Box sx = {{mt:4, display:'flex', justifyContent:'center'}}>
+                    <Box sx={{mt:4, display:'flex', justifyContent:'center'}}>
                         <Button variant="contained" color="secondary" onClick={handleOpenDialog}>
                             Save
                         </Button>
