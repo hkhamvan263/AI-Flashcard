@@ -9,7 +9,7 @@ import {Card, CardActionArea, CardContent, Container, Grid, Typography} from "@m
 
 export default function Flashcards() {
   const {isLoaded, isSignedIn, user} = useUser()
-  const [flashcards, setFlashcards] =useState([])
+  const [flashcards, setFlashcards] = useState([])
   const router = useRouter()
 
   useEffect(() => {
@@ -28,12 +28,14 @@ export default function Flashcards() {
     getFlashcards()
   }, [user])
 
-    if(!isLoaded || !isSignedIn) {
-      return<></>
-    }
-    const handleCardClick = (id) => {
-      Router.push('/flashcard?id=${id}')
-    }
+  if (!isLoaded || !isSignedIn) {
+    return<></>
+  }
+
+  const handleCardClick = (id) => {
+    Router.push('/flashcard?id=${id}')
+  }
+  
   return (
     <Container maxWidth="100vw">
       <Grid
@@ -43,7 +45,7 @@ export default function Flashcards() {
           mt:4,
         }}
       >
-        {flashcards.map((flashcard, index) => {
+        {flashcards.map((flashcard, index) => (
           <Grid item xs={12} sm ={6} md={4} key={index}>
             <Card>
               <CardActionArea
@@ -59,7 +61,7 @@ export default function Flashcards() {
               </CardActionArea>
             </Card>
           </Grid>
-        })}
+        ))}
       </Grid>
     </Container>
   )

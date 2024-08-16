@@ -4,16 +4,16 @@ import {useEffect,useState} from 'react'
 import {collection, doc, getDoc, getDocs} from 'firebase/firestore'
 import {db} from '@/firebase'
 import {
-    Box,
-    Card,
-    CardActionArea,
-    CardContent,
-    Container,
-    Dialog,
-    Grid,
-    Paper,
-    TextField,
-    Typography
+  Box,
+  Card,
+  CardActionArea,
+  CardContent,
+  Container,
+  Dialog,
+  Grid,
+  Paper,
+  TextField,
+  Typography
 } from '@mui/material'
 import {useSearchParams} from 'next/navigation'
 
@@ -21,17 +21,19 @@ export default function Flashcard() {
   const {isLoaded , isSignedIn, user} = useUser()
   const [flashcards, setFlashcards] = useState([])
   const [flipped, setFlipped] = useState([])
+
   const searchParams = useSearchParams()
   const search = searchParams.get('id')
 
   useEffect(() => {
     async function getFlashcard() {
       if (!search || !user) return
-      const colRef = collection(doc(collection(db, 'users'), user.id),search)
+      const colRef = collection(doc(collection(db, 'users'), user.id), search)
       const docs = await getDocs(colRef)
       const flashcards = []
+
       docs.forEach((doc) => {
-        flashcards.push({id:doc.id, ...doc.data()})
+        flashcards.push({id: doc.id, ...doc.data()})
       })
       setFlashcards(flashcards)
     }
@@ -45,7 +47,7 @@ export default function Flashcard() {
     }))
   }
 
-  if(!isLoaded || !isSignedIn) {
+  if (!isLoaded || !isSignedIn) {
     return <></>
   }
 
