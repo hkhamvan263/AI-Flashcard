@@ -1,5 +1,4 @@
 'use client'
-
 import {useUser} from '@clerk/nextjs'
 import {useEffect,useState} from 'react'
 import {collection, doc, getDoc, getDocs} from 'firebase/firestore'

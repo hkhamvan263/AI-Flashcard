@@ -1,12 +1,11 @@
 'use client'
 import {useUser} from "@clerk/nextjs"
-import {use, useEffect, useState} from 'react'
+import {useEffect, useState} from 'react'
 import {collection, doc,getDoc,setDoc} from 'firebase/firestore'
 import {db} from '@/firebase'
 import {useRouter} from 'next/navigation'
-import {Collections} from "@mui/icons-material"
+//import {Collections} from "@mui/icons-material"
 import {Card, CardActionArea, CardContent, Container, Grid, Typography} from "@mui/material"
-import Flashcards from '@/app/flashcard/page'
 
 export default function Flashcards() {
   const {isLoaded, isSignedIn, user} = useUser()
