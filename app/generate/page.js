@@ -27,6 +27,7 @@ export default function Generate() {
     const [flipped, setFlipped] = useState([])
     const [text, setText] = useState('')
     const [name, setName] = useState('')
+    const [open, setOpen] = useState(false)
     const [dialogOpen, setDialogOpen] = useState(false)
     const router = useRouter()
     
@@ -50,14 +51,17 @@ export default function Generate() {
             [id]: !prev[id],
         }))
     }
-
-    const handleOpenDialog = () => {
-        setDialogOpen(true)
+    
+    const handleOpen = () => {
+        setOpen(true)
     }
 
-    const handleCloseDialog = () => {
-        setDialogOpen(false)
+    const handleClose = () => {
+        setOpen(false)
     }
+
+    const handleOpenDialog = () => setDialogOpen(true)
+    const handleCloseDialog = () => setDialogOpen(false)
 
     const saveFlashcards = async () => {
         if (!name) {
@@ -88,7 +92,7 @@ export default function Generate() {
         })
 
         await batch.commit()
-        handleCloseDialog()
+        handleClose()
         router.push('/flashcards')
     }
     return (
