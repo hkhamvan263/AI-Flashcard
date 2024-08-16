@@ -1,7 +1,7 @@
 'use client'
 import {useUser} from "@clerk/nextjs"
-import {useEffect, useState} from 'react'
-import {collection, doc,getDoc,setDoc} from 'firebase/firestore'
+import {use, useEffect, useState} from 'react'
+import {collection, doc, getDoc,setDoc} from 'firebase/firestore'
 import {db} from '@/firebase'
 import {useRouter} from 'next/navigation'
 //import {Collections} from "@mui/icons-material"
@@ -15,15 +15,16 @@ export default function Flashcards() {
   useEffect(() => {
     async function getFlashcards() {
       if (!user) return
-        const docRef = doc(collection(db, 'users'), user.id)
-        const docSnap = await getDoc(docRef)
+      const docRef = doc(collection(db, 'users'), user.id)
+      const docSnap = await getDoc(docRef)
+      
       if (docSnap.exists()) {
         const collections = docSnap.data().flashcards || []
         setFlashcards(collections)
       } else {
-          await setDoc(docRef, { flashcards: [] })
-        }
+        await setDoc(docRef, {flashcards: []})
       }
+    }
       getFlashcards()
     }, [user])
 
