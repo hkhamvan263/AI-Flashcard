@@ -27,6 +27,7 @@ export default function Generate() {
     const [flipped, setFlipped] = useState([])
     const [text, setText] = useState('')
     const [name, setName] = useState('')
+    const [dialogOpen, setDialogOpen] = useState(false)
     const [open, setOpen] = useState(false)
     const router = useRouter()
     
@@ -65,6 +66,9 @@ export default function Generate() {
     const handleClose = () => {
         setOpen(false)
     }
+
+    const handleOpenDialog = () => setDialogOpen(true)
+    const handleCloseDialog = () => setDialogOpen(false)
 
     const saveFlashcards = async () => {
         if (!name) {
@@ -133,7 +137,7 @@ export default function Generate() {
                 </Paper>
             </Box>
             {flashcards.length > 0 && (
-                <Box sx={{mt: 4,}}>
+                <Box sx={{mt: 4, display: 'flex', justifyContent: 'center'}}>
                     <Typography variant="h5">Flashcards Preview</Typography>
                     <Grid container spacing={3}>
                         {flashcards.map((flashcard, index) => (
