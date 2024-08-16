@@ -4,10 +4,16 @@ import {collection, writeBatch} from 'firebase/firestore'
 import {useRouter} from 'next/navigation'
 import {useState} from 'react'
 import {
+    Button,
     Box,
     Card,
-    CardActionArea, 
+    CardActionArea,
+    CardContent,
     Container, 
+    Dialog,
+    DialogActions,
+    DialogContent,
+    DialogContentText,
     Grid, 
     Paper, 
     TextField, 
